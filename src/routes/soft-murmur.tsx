@@ -77,7 +77,7 @@ function SoftMurmur() {
   };
 
   return (
-    <ToolShell number={4} title="A Soft Murmur" description="Atur campuran suara ambient untuk fokus, tidur, atau meditasi.">
+    <ToolShell number={2} title="AuraSound" description="Atur campuran suara ambient untuk fokus, tidur, atau meditasi.">
       <div className="mb-6">
         <Button onClick={playing ? stop : start} size="lg" className="bg-[image:var(--gradient-gold)] text-[oklch(0.2_0.03_40)] hover:opacity-90">
           {playing ? <><Pause className="mr-2 h-4 w-4" />Berhenti</> : <><Play className="mr-2 h-4 w-4" />Mulai</>}
