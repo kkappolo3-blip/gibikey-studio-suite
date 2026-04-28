@@ -9,7 +9,7 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/file-convert")({
   component: FileConvert,
-  head: () => ({ meta: [{ title: "FileConv — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "PixelCast — Gibikey Studio" }] }),
 });
 
 const FORMATS = [
@@ -47,7 +47,7 @@ function FileConvert() {
   };
 
   return (
-    <ToolShell number={6} title="FileConv" description="Konversi gambar antar format (PNG, JPG, WebP) langsung di browser.">
+    <ToolShell number={3} title="PixelCast" description="Konversi gambar antar format (PNG, JPG, WebP) langsung di browser.">
       <div className="space-y-5 rounded-lg border border-border bg-card p-6">
         <div>
           <Label>Pilih gambar</Label>
