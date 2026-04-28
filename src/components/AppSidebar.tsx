@@ -7,6 +7,7 @@ import {
   Download,
   Stethoscope,
   Sparkles,
+  Info,
 } from "lucide-react";
 import {
   Sidebar,
@@ -72,6 +73,23 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/60 uppercase tracking-widest text-[10px]">
+            Info
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={isActive("/about")} tooltip="About">
+                  <Link to="/about" className="flex items-center gap-3">
+                    <Info className="h-4 w-4 shrink-0" />
+                    <span className="flex-1 truncate">About</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
