@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/pdf-tools")({
   component: PdfTools,
-  head: () => ({ meta: [{ title: "iLovePDF — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "PaperForge — Gibikey Studio" }] }),
 });
 
 function downloadBlob(bytes: Uint8Array, name: string) {
@@ -73,7 +73,7 @@ function PdfTools() {
   };
 
   return (
-    <ToolShell number={2} title="iLovePDF" description="Gabungkan beberapa PDF atau ambil sebagian halaman dari PDF.">
+    <ToolShell number={1} title="PaperForge" description="Gabungkan beberapa PDF atau ambil sebagian halaman dari PDF.">
       <Tabs defaultValue="merge" className="w-full">
         <TabsList>
           <TabsTrigger value="merge">Gabung PDF</TabsTrigger>

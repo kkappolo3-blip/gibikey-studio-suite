@@ -4,7 +4,7 @@ import { BookOpen, Lightbulb, Compass } from "lucide-react";
 
 export const Route = createFileRoute("/cerdika")({
   component: Cerdika,
-  head: () => ({ meta: [{ title: "Cerdika — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "MindWell — Gibikey Studio" }] }),
 });
 
 const TOPICS = [
@@ -15,7 +15,7 @@ const TOPICS = [
 
 function Cerdika() {
   return (
-    <ToolShell number={7} title="Cerdika" description="Pusat materi belajar singkat, dirangkum dengan rapi.">
+    <ToolShell number={4} title="MindWell" description="Pusat materi belajar singkat, dirangkum dengan rapi.">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {TOPICS.map((t) => (
           <article key={t.title} className="rounded-lg border border-border bg-card p-6">

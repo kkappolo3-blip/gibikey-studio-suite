@@ -21,12 +21,12 @@ import {
 } from "@/components/ui/sidebar";
 
 const tools = [
-  { n: 2, title: "iLovePDF", url: "/pdf-tools", icon: FileText },
-  { n: 4, title: "A Soft Murmur", url: "/soft-murmur", icon: Waves },
-  { n: 6, title: "FileConv", url: "/file-convert", icon: ImageIcon },
-  { n: 7, title: "Cerdika", url: "/cerdika", icon: GraduationCap },
-  { n: 12, title: "Muka Downloader", url: "/downloader", icon: Download },
-  { n: 13, title: "Medical Certificate", url: "/medical-certificate", icon: Stethoscope },
+  { n: 1, title: "PaperForge", url: "/pdf-tools", icon: FileText },
+  { n: 2, title: "AuraSound", url: "/soft-murmur", icon: Waves },
+  { n: 3, title: "PixelCast", url: "/file-convert", icon: ImageIcon },
+  { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap },
+  { n: 5, title: "GrabMate", url: "/downloader", icon: Download },
+  { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope },
 ];
 
 export function AppSidebar() {

@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/medical-certificate")({
   component: MedCert,
-  head: () => ({ meta: [{ title: "Medical Certificate — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "MediScript — Gibikey Studio" }] }),
 });
 
 function MedCert() {
@@ -90,7 +90,7 @@ function MedCert() {
   };
 
   return (
-    <ToolShell number={13} title="Medical Certificate" description="Buat surat keterangan dokter dalam format PDF (untuk keperluan template/draft).">
+    <ToolShell number={6} title="MediScript" description="Buat surat keterangan dokter dalam format PDF (untuk keperluan template/draft).">
       <div className="grid gap-5 rounded-lg border border-border bg-card p-6 md:grid-cols-2">
         <Field label="Nama Pasien" value={data.patient} onChange={(v) => set("patient", v)} />
         <Field label="Usia" value={data.age} onChange={(v) => set("age", v)} />

@@ -9,7 +9,7 @@ import { ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/downloader")({
   component: Downloader,
-  head: () => ({ meta: [{ title: "Muka Downloader — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "GrabMate — Gibikey Studio" }] }),
 });
 
 function Downloader() {
@@ -38,7 +38,7 @@ function Downloader() {
   };
 
   return (
-    <ToolShell number={12} title="Muka Downloader" description="Unduh media langsung dari URL publik (mendukung file yang mengizinkan CORS).">
+    <ToolShell number={5} title="GrabMate" description="Unduh media langsung dari URL publik (mendukung file yang mengizinkan CORS).">
       <div className="space-y-5 rounded-lg border border-border bg-card p-6">
         <div>
           <Label>URL media</Label>

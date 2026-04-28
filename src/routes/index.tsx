@@ -12,12 +12,12 @@ export const Route = createFileRoute("/")({
 });
 
 const tools = [
-  { n: 2, title: "iLovePDF", url: "/pdf-tools", icon: FileText, desc: "Gabung & pisah file PDF dengan cepat." },
-  { n: 4, title: "A Soft Murmur", url: "/soft-murmur", icon: Waves, desc: "Mixer suara ambient untuk fokus & relaksasi." },
-  { n: 6, title: "FileConv", url: "/file-convert", icon: ImageIcon, desc: "Konversi format gambar (PNG, JPG, WebP)." },
-  { n: 7, title: "Cerdika", url: "/cerdika", icon: GraduationCap, desc: "Pusat materi belajar singkat & rapi." },
-  { n: 12, title: "Muka Downloader", url: "/downloader", icon: Download, desc: "Unduh media dari URL publik." },
-  { n: 13, title: "Medical Certificate", url: "/medical-certificate", icon: Stethoscope, desc: "Generator surat keterangan dokter (PDF)." },
+  { n: 1, title: "PaperForge", url: "/pdf-tools", icon: FileText, desc: "Gabung & pisah file PDF dengan cepat." },
+  { n: 2, title: "AuraSound", url: "/soft-murmur", icon: Waves, desc: "Mixer suara ambient untuk fokus & relaksasi." },
+  { n: 3, title: "PixelCast", url: "/file-convert", icon: ImageIcon, desc: "Konversi format gambar (PNG, JPG, WebP)." },
+  { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap, desc: "Pusat materi belajar singkat & rapi." },
+  { n: 5, title: "GrabMate", url: "/downloader", icon: Download, desc: "Unduh media dari URL publik." },
+  { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope, desc: "Generator surat keterangan dokter (PDF)." },
 ];
 
 function Index() {
