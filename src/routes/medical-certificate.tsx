@@ -13,6 +13,86 @@ export const Route = createFileRoute("/medical-certificate")({
   head: () => ({ meta: [{ title: "MediScript — Gibikey Studio" }] }),
 });
 
+/**
+ * Menggambar stempel resmi bundar pada PDF.
+ * Lingkaran ganda + teks nama klinik melengkung di atas + bintang & label tengah.
+ */
+function drawOfficialStamp(doc: jsPDF, cx: number, cy: number, clinicName: string) {
+  const outerR = 22;
+  const innerR = 17;
+
+  doc.saveGraphicsState();
+  // Sedikit miring agar terlihat seperti cap manual
+  // jsPDF tidak punya rotate global yang mudah; kita pakai warna & bentuk saja.
+
+  // Warna tinta stempel (biru tua keunguan)
+  doc.setDrawColor(40, 50, 130);
+  doc.setTextColor(40, 50, 130);
+  doc.setLineWidth(0.8);
+
+  // Lingkaran luar & dalam
+  doc.circle(cx, cy, outerR, "S");
+  doc.setLineWidth(0.4);
+  doc.circle(cx, cy, innerR, "S");
+
+  // Teks melengkung di atas (nama klinik)
+  const topText = clinicName.toUpperCase();
+  const arcRadius = (outerR + innerR) / 2;
+  const totalArc = Math.PI * 0.9; // sudut total ~162°
+  const startAngle = Math.PI + (Math.PI - totalArc) / 2; // mulai dari kiri-atas
+  const chars = topText.split("");
+  doc.setFont("times", "bold");
+  doc.setFontSize(6.5);
+  chars.forEach((ch, i) => {
+    const t = chars.length === 1 ? 0.5 : i / (chars.length - 1);
+    const angle = startAngle + t * totalArc;
+    const x = cx + arcRadius * Math.cos(angle);
+    const y = cy + arcRadius * Math.sin(angle);
+    // Rotasi huruf: tegak lurus jari-jari
+    const deg = (angle * 180) / Math.PI + 90;
+    doc.text(ch, x, y, { angle: -deg, align: "center" });
+  });
+
+  // Teks melengkung di bawah
+  const bottomText = "GIBIKEY STUDIO";
+  const bArc = Math.PI * 0.6;
+  const bStart = -bArc / 2; // simetris di bawah, bawah = sudut 0..π di koordinat layar (y ke bawah)
+  // Karena di jsPDF y bertambah ke bawah, kita pakai sudut antara 0..π untuk setengah bawah
+  const bStartAngle = (Math.PI - bArc) / 2; // 0 = kanan, π = kiri (bawah karena y+)
+  const bChars = bottomText.split("");
+  doc.setFontSize(5.5);
+  bChars.forEach((ch, i) => {
+    const t = bChars.length === 1 ? 0.5 : i / (bChars.length - 1);
+    const angle = bStartAngle + t * bArc;
+    const x = cx + arcRadius * Math.cos(angle);
+    const y = cy + arcRadius * Math.sin(angle);
+    const deg = (angle * 180) / Math.PI - 90;
+    doc.text(ch, x, y, { angle: -deg, align: "center" });
+  });
+  // (mark unused to satisfy linter)
+  void bStart;
+
+  // Bintang kecil di kiri & kanan (separator)
+  doc.setFontSize(8);
+  doc.text("★", cx - arcRadius, cy + 1, { align: "center" });
+  doc.text("★", cx + arcRadius, cy + 1, { align: "center" });
+
+  // Teks tengah
+  doc.setFont("times", "bold");
+  doc.setFontSize(7);
+  doc.text("CAP RESMI", cx, cy - 3, { align: "center" });
+  doc.setFontSize(9);
+  doc.text("✚", cx, cy + 2, { align: "center" });
+  doc.setFontSize(6);
+  doc.setFont("times", "normal");
+  doc.text("KLINIK", cx, cy + 7, { align: "center" });
+
+  // Reset warna
+  doc.setDrawColor(0, 0, 0);
+  doc.setTextColor(0, 0, 0);
+  doc.restoreGraphicsState();
+}
+
 function MedCert() {
   const [data, setData] = useState({
     patient: "",
