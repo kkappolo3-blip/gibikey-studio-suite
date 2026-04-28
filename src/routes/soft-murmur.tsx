@@ -7,7 +7,7 @@ import { Play, Pause, CloudRain, Wind, Waves as WavesIcon, Flame, Coffee, Bird }
 
 export const Route = createFileRoute("/soft-murmur")({
   component: SoftMurmur,
-  head: () => ({ meta: [{ title: "A Soft Murmur — Gibikey Studio" }] }),
+  head: () => ({ meta: [{ title: "AuraSound — Gibikey Studio" }] }),
 });
 
 type Sound = { id: string; label: string; icon: typeof CloudRain; freq: number; type: OscillatorType; filter: number };
