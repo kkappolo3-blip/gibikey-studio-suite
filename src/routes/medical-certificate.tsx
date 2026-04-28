@@ -78,15 +78,22 @@ function MedCert() {
     doc.text("Demikian surat ini dibuat untuk dipergunakan sebagaimana mestinya.", 20, y, { maxWidth: w - 40 });
 
     y += 24;
-    doc.text(`Hormat kami,`, w - 70, y);
+    const today = new Date().toISOString().slice(0, 10);
+    doc.text(`Tertanda, ${today}`, w - 70, y);
     y += 28;
     doc.setFont("times", "bold");
     doc.text(data.doctor, w - 70, y);
     doc.setFont("times", "normal");
     doc.text(`STR: ${data.license}`, w - 70, y + 6);
 
+    // === Cap / Stempel Resmi Klinik ===
+    // Ditempatkan menumpang pada area tanda tangan, sedikit miring
+    const stampX = w - 95;
+    const stampY = y - 6;
+    drawOfficialStamp(doc, stampX, stampY, data.clinic);
+
     doc.save(`surat-dokter-${data.patient.replace(/\s+/g, "-")}.pdf`);
-    toast.success("PDF dibuat");
+    toast.success("PDF dibuat dengan cap resmi");
   };
 
   return (
