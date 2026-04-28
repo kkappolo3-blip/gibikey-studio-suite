@@ -15,6 +15,7 @@ import { Route as MedicalCertificateRouteImport } from './routes/medical-certifi
 import { Route as FileConvertRouteImport } from './routes/file-convert'
 import { Route as DownloaderRouteImport } from './routes/downloader'
 import { Route as CerdikaRouteImport } from './routes/cerdika'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SoftMurmurRoute = SoftMurmurRouteImport.update({
@@ -47,6 +48,11 @@ const CerdikaRoute = CerdikaRouteImport.update({
   path: '/cerdika',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,6 +61,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/cerdika'
     | '/downloader'
     | '/file-convert'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/cerdika'
     | '/downloader'
     | '/file-convert'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/cerdika'
     | '/downloader'
     | '/file-convert'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   CerdikaRoute: typeof CerdikaRoute
   DownloaderRoute: typeof DownloaderRoute
   FileConvertRoute: typeof FileConvertRoute
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CerdikaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   CerdikaRoute: CerdikaRoute,
   DownloaderRoute: DownloaderRoute,
   FileConvertRoute: FileConvertRoute,
