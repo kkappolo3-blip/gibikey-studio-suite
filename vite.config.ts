@@ -27,6 +27,7 @@ export default defineConfig({
       { path: "/pdf-tools" },
       { path: "/soft-murmur" },
       { path: "/tentang-kami" },
+      { path: "/dapurku" },
     ],
   },
 });
