@@ -8,6 +8,7 @@ import {
   Stethoscope,
   Sparkles,
   Info,
+  Users,
 } from "lucide-react";
 import {
   Sidebar,
@@ -87,6 +88,18 @@ export function AppSidebar() {
                   <Link to="/about" className="flex items-center gap-3">
                     <Info className="h-4 w-4 shrink-0" />
                     <span className="flex-1 truncate">About</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive("/tentang-kami")}
+                  tooltip="Tentang Kami"
+                >
+                  <Link to="/tentang-kami" className="flex items-center gap-3">
+                    <Users className="h-4 w-4 shrink-0" />
+                    <span className="flex-1 truncate">Tentang Kami</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
