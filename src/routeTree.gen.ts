@@ -15,6 +15,7 @@ import { Route as PdfToolsRouteImport } from './routes/pdf-tools'
 import { Route as MedicalCertificateRouteImport } from './routes/medical-certificate'
 import { Route as FileConvertRouteImport } from './routes/file-convert'
 import { Route as DownloaderRouteImport } from './routes/downloader'
+import { Route as DapurkuRouteImport } from './routes/dapurku'
 import { Route as CerdikaRouteImport } from './routes/cerdika'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -49,6 +50,11 @@ const DownloaderRoute = DownloaderRouteImport.update({
   path: '/downloader',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DapurkuRoute = DapurkuRouteImport.update({
+  id: '/dapurku',
+  path: '/dapurku',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CerdikaRoute = CerdikaRouteImport.update({
   id: '/cerdika',
   path: '/cerdika',
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
+  '/dapurku': typeof DapurkuRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
   '/medical-certificate': typeof MedicalCertificateRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
+  '/dapurku': typeof DapurkuRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
   '/medical-certificate': typeof MedicalCertificateRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cerdika': typeof CerdikaRoute
+  '/dapurku': typeof DapurkuRoute
   '/downloader': typeof DownloaderRoute
   '/file-convert': typeof FileConvertRoute
   '/medical-certificate': typeof MedicalCertificateRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/cerdika'
+    | '/dapurku'
     | '/downloader'
     | '/file-convert'
     | '/medical-certificate'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/cerdika'
+    | '/dapurku'
     | '/downloader'
     | '/file-convert'
     | '/medical-certificate'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/cerdika'
+    | '/dapurku'
     | '/downloader'
     | '/file-convert'
     | '/medical-certificate'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CerdikaRoute: typeof CerdikaRoute
+  DapurkuRoute: typeof DapurkuRoute
   DownloaderRoute: typeof DownloaderRoute
   FileConvertRoute: typeof FileConvertRoute
   MedicalCertificateRoute: typeof MedicalCertificateRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DownloaderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dapurku': {
+      id: '/dapurku'
+      path: '/dapurku'
+      fullPath: '/dapurku'
+      preLoaderRoute: typeof DapurkuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cerdika': {
       id: '/cerdika'
       path: '/cerdika'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CerdikaRoute: CerdikaRoute,
+  DapurkuRoute: DapurkuRoute,
   DownloaderRoute: DownloaderRoute,
   FileConvertRoute: FileConvertRoute,
   MedicalCertificateRoute: MedicalCertificateRoute,

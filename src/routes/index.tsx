@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { FileText, Waves, Image as ImageIcon, GraduationCap, Download, Stethoscope } from "lucide-react";
+import { FileText, Waves, Image as ImageIcon, GraduationCap, Download, Stethoscope, ChefHat } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -18,6 +18,7 @@ const tools = [
   { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap, desc: "Pusat materi belajar singkat & rapi." },
   { n: 5, title: "GrabMate", url: "/downloader", icon: Download, desc: "Unduh media dari URL publik." },
   { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope, desc: "Generator surat keterangan dokter (PDF)." },
+  { n: 7, title: "DapurKu", url: "/dapurku", icon: ChefHat, desc: "Cari resep masakan dari bahan yang ada di dapurmu." },
 ];
 
 function Index() {
