@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
 import { Route as SoftMurmurRouteImport } from './routes/soft-murmur'
 import { Route as PdfToolsRouteImport } from './routes/pdf-tools'
 import { Route as MedicalCertificateRouteImport } from './routes/medical-certificate'
@@ -18,6 +19,11 @@ import { Route as CerdikaRouteImport } from './routes/cerdika'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TentangKamiRoute = TentangKamiRouteImport.update({
+  id: '/tentang-kami',
+  path: '/tentang-kami',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SoftMurmurRoute = SoftMurmurRouteImport.update({
   id: '/soft-murmur',
   path: '/soft-murmur',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/medical-certificate': typeof MedicalCertificateRoute
   '/pdf-tools': typeof PdfToolsRoute
   '/soft-murmur': typeof SoftMurmurRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/medical-certificate': typeof MedicalCertificateRoute
   '/pdf-tools': typeof PdfToolsRoute
   '/soft-murmur': typeof SoftMurmurRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/medical-certificate': typeof MedicalCertificateRoute
   '/pdf-tools': typeof PdfToolsRoute
   '/soft-murmur': typeof SoftMurmurRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/medical-certificate'
     | '/pdf-tools'
     | '/soft-murmur'
+    | '/tentang-kami'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/medical-certificate'
     | '/pdf-tools'
     | '/soft-murmur'
+    | '/tentang-kami'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/medical-certificate'
     | '/pdf-tools'
     | '/soft-murmur'
+    | '/tentang-kami'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,10 +144,18 @@ export interface RootRouteChildren {
   MedicalCertificateRoute: typeof MedicalCertificateRoute
   PdfToolsRoute: typeof PdfToolsRoute
   SoftMurmurRoute: typeof SoftMurmurRoute
+  TentangKamiRoute: typeof TentangKamiRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tentang-kami': {
+      id: '/tentang-kami'
+      path: '/tentang-kami'
+      fullPath: '/tentang-kami'
+      preLoaderRoute: typeof TentangKamiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/soft-murmur': {
       id: '/soft-murmur'
       path: '/soft-murmur'
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   MedicalCertificateRoute: MedicalCertificateRoute,
   PdfToolsRoute: PdfToolsRoute,
   SoftMurmurRoute: SoftMurmurRoute,
+  TentangKamiRoute: TentangKamiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
