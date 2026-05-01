@@ -9,6 +9,7 @@ import {
   Sparkles,
   Info,
   Users,
+  ChefHat,
 } from "lucide-react";
 import {
   Sidebar,
@@ -29,6 +30,7 @@ const tools = [
   { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap },
   { n: 5, title: "GrabMate", url: "/downloader", icon: Download },
   { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope },
+  { n: 7, title: "DapurKu", url: "/dapurku", icon: ChefHat },
 ];
 
 export function AppSidebar() {
