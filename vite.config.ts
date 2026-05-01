@@ -26,6 +26,7 @@ export default defineConfig({
       { path: "/medical-certificate" },
       { path: "/pdf-tools" },
       { path: "/soft-murmur" },
+      { path: "/tentang-kami" },
     ],
   },
 });
