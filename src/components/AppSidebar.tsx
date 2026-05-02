@@ -72,6 +72,14 @@ export function AppSidebar() {
                         </span>
                         {t.title}
                       </span>
+                      {t.featured && (
+                        <span
+                          title="Tool unggulan"
+                          className="ml-auto shrink-0 rounded-full bg-[image:var(--gradient-gold)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[oklch(0.2_0.03_40)]"
+                        >
+                          ★
+                        </span>
+                      )}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
