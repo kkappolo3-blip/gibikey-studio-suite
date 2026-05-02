@@ -24,13 +24,13 @@ import {
 } from "@/components/ui/sidebar";
 
 const tools = [
-  { n: 1, title: "PaperForge", url: "/pdf-tools", icon: FileText },
-  { n: 2, title: "AuraSound", url: "/soft-murmur", icon: Waves },
-  { n: 3, title: "PixelCast", url: "/file-convert", icon: ImageIcon },
-  { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap },
-  { n: 5, title: "GrabMate", url: "/downloader", icon: Download },
-  { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope },
-  { n: 7, title: "DapurKu", url: "/dapurku", icon: ChefHat },
+  { n: 1, title: "PaperForge", url: "/pdf-tools", icon: FileText, featured: false },
+  { n: 2, title: "AuraSound", url: "/soft-murmur", icon: Waves, featured: false },
+  { n: 3, title: "PixelCast", url: "/file-convert", icon: ImageIcon, featured: false },
+  { n: 4, title: "MindWell", url: "/cerdika", icon: GraduationCap, featured: false },
+  { n: 5, title: "GrabMate", url: "/downloader", icon: Download, featured: false },
+  { n: 6, title: "MediScript", url: "/medical-certificate", icon: Stethoscope, featured: true },
+  { n: 7, title: "DapurKu", url: "/dapurku", icon: ChefHat, featured: true },
 ];
 
 export function AppSidebar() {
