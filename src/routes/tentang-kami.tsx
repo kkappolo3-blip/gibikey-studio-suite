@@ -17,7 +17,7 @@ export const Route = createFileRoute("/tentang-kami")({
       {
         property: "og:description",
         content:
-          "Suite 6 tools kreatif (PDF, audio, gambar, downloader, MediScript & MindWell) dalam satu app, tanpa login.",
+          "Suite tools kreatif (PDF, audio, gambar, downloader, MediScript, MindWell, dan yang lainnya) dalam satu app, tanpa login.",
       },
     ],
   }),
