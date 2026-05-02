@@ -66,20 +66,20 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild isActive={isActive(t.url)} tooltip={t.title}>
                     <Link to={t.url} className="flex items-center gap-3">
                       <t.icon className="h-4 w-4 shrink-0" />
-                      <span className="flex-1 truncate">
-                        <span className="mr-2 text-xs font-mono text-sidebar-foreground/50">
+                      <span className="flex flex-1 items-center gap-2 truncate">
+                        <span className="text-xs font-mono text-sidebar-foreground/50">
                           {String(t.n).padStart(2, "0")}
                         </span>
-                        {t.title}
+                        <span className="flex-1 truncate">{t.title}</span>
+                        {t.featured && (
+                          <span
+                            title="Tool unggulan"
+                            className="shrink-0 rounded-full bg-[image:var(--gradient-gold)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[oklch(0.2_0.03_40)]"
+                          >
+                            ★
+                          </span>
+                        )}
                       </span>
-                      {t.featured && (
-                        <span
-                          title="Tool unggulan"
-                          className="ml-auto shrink-0 rounded-full bg-[image:var(--gradient-gold)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[oklch(0.2_0.03_40)]"
-                        >
-                          ★
-                        </span>
-                      )}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
