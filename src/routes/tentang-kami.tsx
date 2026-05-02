@@ -17,7 +17,7 @@ export const Route = createFileRoute("/tentang-kami")({
       {
         property: "og:description",
         content:
-          "Suite 6 tools kreatif (PDF, audio, gambar, downloader, MediScript & MindWell) dalam satu app, tanpa login.",
+          "Suite tools kreatif (PDF, audio, gambar, downloader, MediScript, MindWell, dan yang lainnya) dalam satu app, tanpa login.",
       },
     ],
   }),
@@ -90,10 +90,10 @@ function TentangKamiPage() {
           <ol className="list-decimal space-y-2 pl-5">
             <li>Buka sidebar di sisi kiri aplikasi.</li>
             <li>
-              Pilih salah satu dari 6 tool: <strong>PaperForge</strong>,{" "}
+              Pilih salah satu tool yang tersedia: <strong>PaperForge</strong>,{" "}
               <strong>AuraSound</strong>, <strong>PixelCast</strong>,{" "}
-              <strong>MindWell</strong>, <strong>GrabMate</strong>, atau{" "}
-              <strong>MediScript</strong>.
+              <strong>MindWell</strong>, <strong>GrabMate</strong>,{" "}
+              <strong>MediScript</strong>, dan yang lainnya.
             </li>
             <li>Ikuti instruksi pada masing-masing halaman tool.</li>
             <li>Unduh atau salin hasilnya langsung dari browser.</li>
